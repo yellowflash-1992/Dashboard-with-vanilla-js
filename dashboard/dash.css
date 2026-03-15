@@ -1,0 +1,364 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #201f24;
+    border-radius: 10px;
+}
+
+html {
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    background-color: #f8f5f0;
+    overflow-y: hidden;
+}
+
+aside {
+    background-color: #201f24;
+    height: 100%;
+    /* flex-grow: 1; */
+    /* order: 2; */
+    width: 240px;
+    border-radius: 0 20px 20px 0;
+}
+
+.logo {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    padding: 30px 20px;
+    color: white;
+    font-weight: 600;
+}
+
+nav {
+    padding-right: 20px;
+    margin-top: 40px;
+}
+
+.nav_link {
+    padding: 14px 20px;
+    color: #ddd;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 14px;
+}
+
+.nav_link.active {
+    background-color: white;
+    color: #201f24;
+}
+
+.nav_link:hover {
+    background-color: white;
+    color: #201f24;
+}
+
+main {
+    height: 100%;
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+main header .title {
+    font-size: 36px;
+    color: #201f24;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+main header .cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+<-->main header .div {
+    padding: 20px;
+    background-color: white;
+    flex-grow: 1;
+}
+
+main header .cards div {
+    padding: 20px;
+    background-color: white;
+    flex-grow: 1;
+    border-radius: 10px;
+}
+
+main header {
+    color: #201f24;
+    /* margin-top: 30px; */
+}
+
+main header h3 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+main header .cards div:first-child {
+    background-color: #201f24;
+    color: white;
+}
+
+main header .cards div:hover {
+    background-color: #201f24;
+    color: white;
+}
+
+main section.grid_cards {
+    display: grid;
+    /* grid-template-columns: repeat(z, 1fr); */
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: repeat(3, 300px);
+    /* background-color: #434343; */
+    gap: 30px;
+    margin-top: 50px;
+    /* padding: 10px; */
+    grid-template-areas: "areaA areaB" "areaC areaB" "areaC areaD";
+}
+
+main section.grid_cards>div {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.Pots {
+    grid-area: areaA;
+}
+
+.Transactions {
+    grid-area: areaC;
+    overflow-y: hidden;
+}
+
+.Transactions:hover {
+    overflow-y: auto;
+}
+
+.Transactions::-webkit-scrollbar {
+    display: none;
+}
+
+.Budgets {
+    grid-area: areaB;
+}
+
+.Bills {
+    grid-area: areaD;
+}
+
+.grid_cards header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.grid_cards header button {
+    background-color: transparent;
+    border: 0;
+    color: #333;
+    font-size: 13px;
+}
+
+.Pots_cards {
+    display: flex;
+    gap: 20px;
+}
+
+.Pots_cards>div:first-child {
+    background-color: #f8f5f0;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    & h3 {
+        margin-top: 10px;
+        font-size: 26px;
+    }
+}
+
+.Pots_cards>div:last-child {
+    flex-grow: 1;
+}
+
+.mobile_nav {
+    display: none;
+}
+
+.Pots_cards .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Pots_cards .left ion-icons {
+    font-size: 32px;
+}
+
+.Pots_cards .right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.Pots_cards .right div,
+.Budgets .right div {
+    border-left: 2px solid var(--color);
+    padding: 5px 10px;
+}
+
+.Pots_cards .right p:last-child,
+.Budgets .right p:last-child {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.bills_cards {
+    margin-top: 20px;
+}
+
+.bills_cards div {
+    background-color: #f8f5f0;
+    padding: 15px 10px;
+    border-left: 2px solid var(--color);
+    border-radius: 6px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bills_cards p:last-child {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.Transaction {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Transaction span {
+    height: 50px;
+    width: 50px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.Transaction div:first-child {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.Transaction div:last-child p {
+    font-size: 20px;
+    color: gray;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.Transaction:not(:last-child) {
+    border-bottom: 1px solid gray;
+}
+
+.Budgets .left {
+    height: 220px;
+    width: 220px;
+    border: 20px solid;
+    border-color: red blue green green;
+    border-radius: 50%;
+    position: relative;
+}
+
+.Budgets .left::after {
+    content: "";
+    position: absolute;
+    /* background-color: black; */
+    inset: 0;
+    /* shorthand for top, right, bottom, left */
+    border: 15px solid;
+    border-radius: 50%;
+    border-color: rgb(252, 84, 84) rgb(99, 99, 211) rgb(81, 175, 81) rgb(81, 175, 81);
+    transform: rotate(15deg);
+}
+
+.Budgets>div {
+    display: flex;
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    aside {
+        display: none;
+    }
+    main header .cards {
+        flex-direction: column;
+    }
+    main section.grid_cards {
+        grid-template-columns: 1fr;
+        grid-template-areas: unset;
+    }
+    main section.grid_cards * {
+        grid-area: unset;
+    }
+    .mobile_nav {
+        display: flex;
+        padding: 10px 30px;
+        background: #201f24;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        padding-bottom: 0;
+        color: white;
+        font-size: 26px;
+        justify-content: space-around;
+    }
+    .mobile_nav div {
+        padding: 8px 12px;
+        border-radius: 6px 6px 0 0;
+    }
+    .mobile_nav div.active {
+        background-color: white;
+        color: gray;
+        border-radius: 10px;
+    }
+    .Pots_cards {
+        flex-direction: column;
+    }
+}
+
+
+/* flex grow: it is the ratio at which flex items share the remaining space in a container
+3. order:it is how flex items are arranged 
+fraction in grid is used to determine hoe the space int the section would be shared in t *
